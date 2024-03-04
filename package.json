@@ -1,0 +1,23 @@
+{
+  "name": "sson",
+  "version": "1.0.0",
+  "description": "This is a learning app for fun.",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sktsourav/sson.git"
+  },
+  "keywords": [],
+  "author": "Sourav Kumar Thakur",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sktsourav/sson/issues"
+  },
+  "homepage": "https://github.com/sktsourav/sson#readme",
+  "devDependencies": {
+    "parcel": "^2.9.3"
+  }
+}
