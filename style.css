@@ -55,3 +55,8 @@
     width: 100%;
     height: 220px;
 }
+
+.filter-btn {
+    margin: 10px;
+    cursor: pointer;
+}
