@@ -78,3 +78,8 @@
 .filter {
     display: flex;
 }
+
+.login {
+    padding: 10px;
+    cursor: pointer;
+}

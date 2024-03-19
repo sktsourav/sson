@@ -5,6 +5,7 @@ import { SWIGGY_URL } from "../utils/constants";
 
 const Body = () => {
     const [restaurantList, setRestaurantList] = useState([]);
+    const [searchedRestaurantList, setSearchedRestaurantList] = useState([]);
     const [searchText, setSearchText] = useState("");
 
     useEffect(() => {
@@ -15,11 +16,12 @@ const Body = () => {
         const data = await fetch(SWIGGY_URL)
         const resList = await data.json();
         setRestaurantList(resList?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+        setSearchedRestaurantList(resList?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     }
 
     const search = () => {
         const searchList = restaurantList.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()));
-        setRestaurantList(searchList)
+        setSearchedRestaurantList(searchList)
     }
 
     return restaurantList.length === 0 ? <Shimmer /> : (
@@ -36,15 +38,15 @@ const Body = () => {
                     </button>
                 </div>
                 <button className="filter-btn" onClick={() => {
-                    const filteredList = restaurantList.filter(res => res?.info?.avgRating >= 4.2)
-                    setRestaurantList(filteredList)
+                    const filteredList = searchedRestaurantList.filter(res => res?.info?.avgRating >= 4.4)
+                    setSearchedRestaurantList(filteredList)
                 }}>
                     Filter by ratting
                 </button>
             </div>
             <div className="restaurant-container">
                 {
-                    restaurantList.map((restaurant) => (
+                    searchedRestaurantList.map((restaurant) => (
                         <RestaurantCard key={restaurant?.info?.id} restaurant={restaurant} />
                     ))
                 }
