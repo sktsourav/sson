@@ -1,15 +1,23 @@
 .app {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
 }
 
 .header {
     display: flex;
     justify-content: space-between;
-    border: 1px dotted gray;
+    border: 2px solid #f0f0f0;
 }
 
 .logo {
-    width: 200px;
+    width: 120px;
+}
+
+.linkStyle {
+    flex: 0 1 calc(100% / 7);
+    box-sizing: border-box;
+    text-decoration: none;
+    color: inherit;
 }
 
 .nav-items {
@@ -26,20 +34,55 @@
     padding: 10px;
 }
 
+.filter {
+    margin-top: 30px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+}
+
 .search {
-    padding: 10px;
+    margin-top: 50px;
+}
+
+.search-box {
+    cursor: pointer;
+    height: 35px;
+    width: 600px;
+}
+
+.searchButton {
+    background-color: #fc8019;
+    cursor: pointer;
+    width: 100px;
+    color: #ffffff;
+    border: none;
+    height: 40px;
+    margin-left: 5px;
+}
+
+.filter-btn {
+    cursor: pointer;
+    color: #fff;
+    background-color: #fc8019;
+    border: none;
+    width: 100px;
+    height: 40px;
+    margin-left: 5px;
+    margin-top: 50px;
+    margin-left: 100px;
 }
 
 .restaurant-container {
     display: flex;
-    flex-wrap: wrap
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .restaurant-card {
     padding: 5px;
     margin: 10px;
-    width: 12%;
-    background-color: #e3ffd4;
+    background-color: #f4f4f4;
 }
 
 .restaurant-card>p {
@@ -47,18 +90,13 @@
 }
 
 .restaurant-card:hover {
-    border: 1px dashed black;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     cursor: pointer;
 }
 
 .restaurant-logo {
     width: 100%;
     height: 220px;
-}
-
-.filter-btn {
-    margin: 10px;
-    cursor: pointer;
 }
 
 .shimmer-container {
@@ -75,11 +113,26 @@
     background-color: #f0f0f0;
 }
 
-.filter {
-    display: flex;
+.login {
+    background-color: #fc8019;
+    cursor: pointer;
+    margin: 10px;
+    width: 100px;
+    color: #ffffff;
+    border: none;
 }
 
-.login {
-    padding: 10px;
-    cursor: pointer;
+.aboutus {
+    color: #fff;
+    background-color: #036f75;
+    height: 88vh;
+    font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centerDiv {
+    display: grid;
+    place-items: center;
 }
