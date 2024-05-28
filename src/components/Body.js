@@ -3,6 +3,7 @@ import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { SWIGGY_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
     const [restaurantList, setRestaurantList] = useState([]);
@@ -24,6 +25,9 @@ const Body = () => {
         const searchList = restaurantList.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()));
         setSearchedRestaurantList(searchList)
     }
+
+    const onlineStatus = useOnlineStatus();
+    if (!onlineStatus) return ("No internet connection. Please check your internet connection")
 
     return restaurantList.length === 0 ? <Shimmer /> : (
         <div className="body">
@@ -51,7 +55,7 @@ const Body = () => {
                     searchedRestaurantList.map((restaurant) => (
                         // <RestaurantCard key={restaurant?.info?.id} restaurant={restaurant} />
                         <Link
-                            key={restaurant?.info?.id} 
+                            key={restaurant?.info?.id}
                             className="linkStyle"
                             to={"/restaurant/" + restaurant?.info?.id}
                         >
