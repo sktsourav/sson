@@ -32,7 +32,7 @@ const RestaurantPage = () => {
                                             </div>
                                             <div>
                                                 <p className="px-4">{menu?.card?.info?.name}</p>
-                                                <p className="px-4 text-xs">{menu?.card?.info?.description}</p>
+                                                <p className="px-4 text-xs text-gray-500">{menu?.card?.info?.description}</p>
                                             </div>
                                         </div>
                                         <div className=" flex items-center">

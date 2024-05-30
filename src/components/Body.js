@@ -4,11 +4,14 @@ import Shimmer from "./Shimmer";
 import { SWIGGY_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import RestaurantCardOffer from "./RestaurantCardOffer";
 
 const Body = () => {
     const [restaurantList, setRestaurantList] = useState([]);
     const [searchedRestaurantList, setSearchedRestaurantList] = useState([]);
     const [searchText, setSearchText] = useState("");
+
+    const RestaurantCardOfferLabel = RestaurantCardOffer(RestaurantCard);
 
     useEffect(() => {
         fetchRestaurants();
@@ -39,12 +42,12 @@ const Body = () => {
                         value={searchText}
                         placeholder="Restaurant Name"
                         onChange={e => setSearchText(e.target.value)} />
-                    <button className="px-4 py-2 bg-orange-100 m-4 rounded-md" onClick={search}>
+                    <button className="px-4 py-2 bg-gray-200 m-4 rounded-sm" onClick={search}>
                         Search
                     </button>
                 </div>
                 <div className="m-4 p-4 flex items-center">
-                    <button className="px-4 py-2 bg-orange-100 rounded-md" onClick={() => {
+                    <button className="px-4 py-2 bg-gray-200 rounded-sm" onClick={() => {
                         const filteredList = searchedRestaurantList.filter(res => res?.info?.avgRating >= 4.4)
                         setSearchedRestaurantList(filteredList)
                     }}>

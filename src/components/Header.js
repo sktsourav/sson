@@ -9,8 +9,10 @@ const Header = () => {
 
     return (
         <div className="flex justify-between bg-orange-100">
-            <div className="logo-container">
-                <img className="w-36 mix-blend-multiply" src={CDN_APP_LOGO} />
+            <div className="logo-container mx-12">
+                <Link to="/">
+                    <img className="w-36 mix-blend-multiply" src={CDN_APP_LOGO} />
+                </Link>
             </div>
             <div className="flex items-center">
                 <ul className="flex p-4 m-5">
