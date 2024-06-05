@@ -20,6 +20,7 @@ const RestaurantPage = () => {
         }
     }
 
+    const [showIndex, setIndex] = useState(null)
 
     if (restaurantData === null) return <Shimmer />
 
@@ -48,8 +49,13 @@ const RestaurantPage = () => {
 
             {modern == true ? (
                 <>
-                    {menuCategories.map(category => (
-                        <MenuHead key={category?.card?.card?.title} data={category.card.card} />
+                    {menuCategories.map((category, index) => (
+                        <MenuHead
+                            key={category?.card?.card?.title}
+                            data={category.card.card}
+                            showIndex={showIndex === index ? true : false}
+                            toggles={() => setIndex(index)}
+                        />
                     ))}
                 </>) :
                 <>
