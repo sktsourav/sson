@@ -49,7 +49,7 @@ const RestaurantPage = () => {
             {modern == true ? (
                 <>
                     {menuCategories.map(category => (
-                        <MenuHead data={category.card.card} />
+                        <MenuHead key={category?.card?.card?.title} data={category.card.card} />
                     ))}
                 </>) :
                 <>
@@ -57,10 +57,10 @@ const RestaurantPage = () => {
                         menuOptions?.map((option) => (
                             option?.card?.card?.itemCards ?
                                 (
-                                    <div>
+                                    <div key={option?.card?.card?.title}>
                                         <h3><p className="mx-12 mt-8 font-bold text-xl">{option?.card?.card?.title}</p></h3>
                                         {option?.card?.card?.itemCards.map(menu => (
-                                            <div className="p-2 mx-12 my-4 flex items-center justify-between border shadow-md">
+                                            <div key={menu?.card?.info?.id} className="p-2 mx-12 my-4 flex items-center justify-between border shadow-md">
                                                 <div className="flex">
                                                     <div>
                                                         <p className="px-4">{menu?.card?.info?.isVeg === 1 ? "🟢" : "🔴"}</p>

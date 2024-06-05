@@ -6,7 +6,7 @@ const MenuBody = ({ data }) => {
         <div>
             {
                 data.map(item => (
-                    <div className="p-2 m-2 flex justify-between border-b-2 border-gray-200">
+                    <div key={item?.card?.info?.id} className="p-2 m-2 flex justify-between border-b-2 border-gray-200">
                         <div className="text-left w-9/12">
                             <div>
                                 <span>{item?.card?.info?.isVeg == 1 ? "🟢" : "🔴"} </span>
