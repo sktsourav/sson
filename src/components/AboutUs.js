@@ -1,12 +1,23 @@
-const AboutUs = () => {
-    return (
-        <div className="aboutus">
+import { Component } from "react";
+import UserContext from "../utils/UserContext";
+class AboutUs extends Component {
+    constructor(props){
+        super(props)
+    }
+    
+    render() {
+        return (
             <div>
-                <h1>Helloooo There !!!!</h1>
+                <p>Helloooo There !!!! - 
+                <UserContext.Consumer>
+                    {(data) => <span className="font-bold"> {data?.loggedInUser}</span>}
+                </UserContext.Consumer>
+                </p>
+                
                 <h2> We are foodie organization and thas all you need to know about us.</h2>
             </div>
-        </div>
-    )
+        )
+    }
 }
 
 export default AboutUs

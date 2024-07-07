@@ -1,15 +1,17 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { SWIGGY_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import RestaurantCardOffer from "./RestaurantCardOffer";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
     const [restaurantList, setRestaurantList] = useState([]);
     const [searchedRestaurantList, setSearchedRestaurantList] = useState([]);
     const [searchText, setSearchText] = useState("");
+    const {setUserName, loggedInUser} = useContext(UserContext)
 
     const RestaurantCardOfferLabel = RestaurantCardOffer(RestaurantCard);
 
@@ -53,6 +55,15 @@ const Body = () => {
                     }}>
                         Filter by ratting
                     </button>
+                </div>
+                <div className="m-4 p-4 flex items-center">
+                    UserName :
+                    <input
+                        type="text"
+                        className="border border-solid border-black"
+                        value={loggedInUser}
+                        onChange={(e) => setUserName(e.target.value)} 
+                    />
                 </div>
             </div>
             <div className="flex flex-wrap mx-12">

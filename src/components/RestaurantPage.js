@@ -53,7 +53,7 @@ const RestaurantPage = () => {
                         <MenuHead
                             key={category?.card?.card?.title}
                             data={category.card.card}
-                            showIndex={showIndex === index ? true : false}
+                            shownIndex={showIndex === index ? true : false}
                             toggles={() => setIndex(index)}
                         />
                     ))}
@@ -92,7 +92,8 @@ const RestaurantPage = () => {
                                 )
                                 : ""
                         ))
-                    }</>
+                    }
+                </>
             }
         </div>
     )
